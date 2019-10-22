@@ -1,6 +1,3 @@
-from pyrad.packet import Packet
-from pyrad.dictionary import Dictionary
-
 from scapy.all import rdpcap, Radius, IP, PcapReader
 from scapy.layers.radius import _packet_codes as PACKET_TYPE
 from scapy.layers.radius import _radius_attribute_types as ATTRIBUTE_TYPES
@@ -149,8 +146,6 @@ for i in hashed_cppm:
 
 i = []
 o = []
-print(hashed_packets[1])
-print(hashed_cppm[1])
 
 for entry in hashed_cppm:
     if entry in hashed_packets:
@@ -172,4 +167,3 @@ for entry in hashed_packets:
 
 print("Number of Packets in CPPM: " + str(len(i)))
 print("Number of Packets not in CPPM: " + str(len(o)))
-print(o[1:10])
